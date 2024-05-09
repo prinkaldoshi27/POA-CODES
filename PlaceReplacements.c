@@ -123,7 +123,7 @@ int main()
     int frames[noFrames];
     do
     {
-        printf(" -- MENU -- \n 1. FIFO \n 2. LRU \n 3. Optiomal \n 4. Exit \n Enter your choice :");
+        printf(" -- MENU -- \n 1. FIFO \n4 2. LRU \n 3. Optiomal \n 4. Exit \n Enter your choice :");
         scanf("%d", &ch);
         switch (ch)
         {

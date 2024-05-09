@@ -1,6 +1,26 @@
 #include <stdio.h>
+0
+void firstFit(int blockSize[], int m, int processSize[], int n)
+{
+    int i, j;
+    int allocation[n];
+    for (i = 0; i < n; i++)
+    {
+        allocation[i] = -1;
+    }
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < m; j++)
+        {
+            if (blockSize[j] >= processSize[i])
+            {
+                allocation[i] = j;
+                blockSize[j] -= processSize[i];
+                break;
+            }
+        }
+    }
 
-y 
     printf("\nProcess No.\tProcess Size\tBlock no.\n");
     for (int i = 0; i < n; i++)
     {
@@ -23,7 +43,7 @@ void nextFit(int blockSize[], int m, int processSize[], int n)
         allocation[i] = -1;
     }
     int start_index = 0;
-    for (int j = 0; j < n; j++)
+    for (int j = 0; j < n; j++) 
     {
         for (int i = start_index; i < m; i++)
         {
@@ -31,7 +51,7 @@ void nextFit(int blockSize[], int m, int processSize[], int n)
             {
                 allocation[j] = i;
                 blockSize[i] = 0;
-                start_index = i;l
+                start_index = i;
                 break;
             }
             start_index = (start_index + 1) % m;
